@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px; /* Padding around navbar */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed; /* Sticky position */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF9900; /* Brand color */
+        }
+
+        .nav-link {
+            color: #555; /* Text color for links */
+            padding: 0.5rem 1rem; /* Padding for links */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .nav-link:hover {
+            color: #000; /* Color change on hover */
+        }
+
+        .booking-container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            width: 100%;
+            margin-top: 80px; /* Space below navbar */
+        }
+
+        .left-section {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 1px solid #ddd;
+        }
+
+        .car-details, .image-section, .important-points {
+            margin-bottom: 20px;
+        }
+
+        .car-details {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .car-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .car-info p {
+            color: #777;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-section img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .important-points h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .important-points p {
+            margin-bottom: 10px;
+        }
+
+        .fare-details {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: inherit;
+        }
+
+        .fare-details h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .fare-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .btn-proceed {
+            width: 100%;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-proceed:hover {
+            background-color: #e6b800;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa; /* Light background for footer */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">RENAX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cars.html">Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="booking-container">
+        <div class="left-section">
+            <div class="car-details">
+                <img src="seltosfront1.jpeg" alt="Car Image" style="width: 200px; height: auto; margin-right: 20px;">
+                <div class="car-info">
+                    <h2>Seltos (P)</h2>
+                    <p>5 seats | Manual | Petrol</p>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <img src="seltosfront1.jpeg" alt="Car Image 1" class="img-enlarge">
+                <img src="seltosengineshot.jpeg" alt="Car Image 2" class="img-enlarge">
+                <img src="seltosback1.jpeg" alt="Car Image 3" class="img-enlarge">
+                <img src="seltosdashboard.jpeg" alt="Car Image 4" class="img-enlarge">
+            </div>
+
+            <div class="important-points">
+                <h4>Important Points to Remember</h4>
+                <p><strong>CHANGE IN PRICING PLAN:</strong> The pricing plan (11 kms/hr, without fuel) cannot be changed after the booking is made.</p>
+                    <p><strong>FUEL:</strong> In case you are returning the car at a lower fuel level than what was received, we will charge a flat Rs 500 refuelling service charge + actual fuel cost to get the fuel back to the original level.</p>
+                    <p><strong>INSURANCE:</strong> The vehicle is insured, but please note that any damages will be your responsibility.</p>
+                    <p><strong>DEPOSIT:</strong> A refundable security deposit of Rs 1000 is required at the time of booking.</p>
+                </div>
+            </div>
+    
+            <div class="right-section">
+                <div class="fare-details">
+                    <h4>Fare Details</h4>
+                    <div class="row">
+                        <div class="col">Base Fare</div>
+                        <div class="col text-end">₹ 5980</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Doorstep delivery & pickup</div>
+                        <div class="col text-end">₹ 500</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Insurance & GST</div>
+                        <div class="col text-end">Included</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Refundable security deposit</div>
+                        <div class="col text-end">₹ 1000</div>
+                    </div>
+                    <div class="row">
+                        <div class="col fare-total">Total</div>
+                        <div class="col text-end fare-total">₹ 7480</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Kms limit</div>
+                        <div class="col text-end">250 kms</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Fuel</div>
+                        <div class="col text-end">Excluded</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Extra kms charge</div>
+                        <div class="col text-end">₹ 11/km</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Tolls, Parking & Inter-state taxes</div>
+                        <div class="col text-end">To be paid by you</div>
+                    </div>
+                </div>
+                <button class="btn-proceed" onclick="confirmBooking()">Proceed</button>
+            </div>
+        </div>
+    
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2024 RENAX. All rights reserved.
+        </div>
+    
+        <!-- Modal for enlarged images -->
+        <div class="modal" id="imageModal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="img01">
+        </div>
+    
+        <script>
+            // Function to display the booking confirmation alert
+            function confirmBooking() {
+                alert("Booking confirmed");
+        // Redirect or proceed with other actions if needed
+                window.location.href = "vechile_rental.html"; // Redirects to login page after the alert
+            
+    }
+            // Image modal functionality
+            const images = document.querySelectorAll('.img-enlarge');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('img01');
+    
+            images.forEach((img) => {
+                img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+            });
+    
+            function closeModal() {
+                modal.style.display = "none";
+            }
+        </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+    </body>
+    </html>

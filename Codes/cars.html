@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Rental Listing - Yellow and White Theme</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #fff;
+      }
+      .card {
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        border: none;
+        background-color: #f8f9fa;
+      }
+      .car-img {
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .rating {
+        color: #28a745;
+        font-weight: bold;
+      }
+      .guest-fav {
+        background-color: #000;
+        color: #fff;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 5px;
+      }
+      .price {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+      .distance {
+        font-size: 0.9rem;
+        color: #777;
+      }
+      .view-details-btn {
+        background-color: #ffc107;
+        color: #000;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        padding: 8px 12px;
+      }
+      .view-details-btn:hover {
+        background-color: #ffca2c;
+        color: #000;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Repeated Car Cards for each car model -->
+
+        <!-- Example Car Card -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="balenofront.jpeg" alt="Baleno" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.4 ★</span>
+                <span class="text-muted">| 23 Trips</span>
+              </div>
+              <h5 class="card-title">Baleno 2023</h5>
+              <div class="price">₹385/hr</div>
+              <div class="text-muted">₹3823 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="baleno.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat this structure for the other cars -->
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="carensfront1.jpeg" alt="Carens" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.6 ★</span>
+                <span class="text-muted">| 57 Trips</span>
+              </div>
+              <h5 class="card-title">Carens 2022</h5>
+              <div class="price">₹479/hr</div>
+              <div class="text-muted">₹5780 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="carens.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="cretafront1.jpeg" alt="Creta" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.5 ★</span>
+                <span class="text-muted">| 31 Trips</span>
+              </div>
+              <h5 class="card-title">Creta 2023</h5>
+              <div class="price">₹429/hr</div>
+              <div class="text-muted">₹4920 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="creta.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="glanzafront1.jpeg" alt="Glanza" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.3 ★</span>
+                <span class="text-muted">| 45 Trips</span>
+              </div>
+              <h5 class="card-title">Glanza 2022</h5>
+              <div class="price">₹409/hr</div>
+              <div class="text-muted">₹4356 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="glanza.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img
+                src="harrierfront.jpeg"
+                alt="Harrier"
+                class="car-img w-100"
+              />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.7 ★</span>
+                <span class="text-muted">| 63 Trips</span>
+              </div>
+              <h5 class="card-title">Harrier 2022</h5>
+              <div class="price">₹559/hr</div>
+              <div class="text-muted">₹7620 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="harrier.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="innovafront1.png" alt="Innova" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.7 ★</span>
+                <span class="text-muted">| 88 Trips</span>
+              </div>
+              <h5 class="card-title">Innova 2021</h5>
+              <div class="price">₹539/hr</div>
+              <div class="text-muted">₹7370 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="innova.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="nexonfront.jpeg" alt="Nexon" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.4 ★</span>
+                <span class="text-muted">| 67 Trips</span>
+              </div>
+              <h5 class="card-title">Nexon 2022</h5>
+              <div class="price">₹379/hr</div>
+              <div class="text-muted">₹4340 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="nexon.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="polofront1.jpeg" alt="Polo" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.6 ★</span>
+                <span class="text-muted">| 45 Trips</span>
+              </div>
+              <h5 class="card-title">Polo 2022</h5>
+              <div class="price">₹339/hr</div>
+              <div class="text-muted">₹3950 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="polo.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="punchfront1.jpeg" alt="Punch" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.4 ★</span>
+                <span class="text-muted">| 24 Trips</span>
+              </div>
+              <h5 class="card-title">Punch 2023</h5>
+              <div class="price">₹389/hr</div>
+              <div class="text-muted">₹4760 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="punch.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img
+                src="scorpionfront1.jpeg"
+                alt="Scorpion"
+                class="car-img w-100"
+              />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.8 ★</span>
+                <span class="text-muted">| 51 Trips</span>
+              </div>
+              <h5 class="card-title">Scorpion 2023</h5>
+              <div class="price">₹599/hr</div>
+              <div class="text-muted">₹5960 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="scorpion.html" class="view-details-btn"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="seltosfront1.jpeg" alt="Seltos" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.6 ★</span>
+                <span class="text-muted">| 19 Trips</span>
+              </div>
+              <h5 class="card-title">Seltos 2024</h5>
+              <div class="price">₹591/hr</div>
+              <div class="text-muted">₹5980 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="seltos.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="sonetsfront.jpeg" alt="Sonet" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.5 ★</span>
+                <span class="text-muted">| 49 Trips</span>
+              </div>
+              <h5 class="card-title">Sonet 2023</h5>
+              <div class="price">₹399/hr</div>
+              <div class="text-muted">₹4783 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="sonets.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img
+                src="swiftswiftleftfrontthreequarter.jpeg"
+                alt="Swift"
+                class="car-img w-100"
+              />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.4 ★</span>
+                <span class="text-muted">| 140 Trips</span>
+              </div>
+              <h5 class="card-title">Swift 2019</h5>
+              <div class="price">₹349/hr</div>
+              <div class="text-muted">₹3700 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="swift.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="venuefront1.jpeg" alt="venue" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.4 ★</span>
+                <span class="text-muted">| 67 Trips</span>
+              </div>
+              <h5 class="card-title">Venue 2021</h5>
+              <div class="price">₹319/hr</div>
+              <div class="text-muted">₹3986 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="venue.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="position-relative">
+              <img src="xuv700front1.jpeg" alt="Xuv700" class="car-img w-100" />
+            </div>
+            <div class="card-body">
+              <div class="rating">
+                <span>4.9 ★</span>
+                <span class="text-muted">| 15 Trips</span>
+              </div>
+              <h5 class="card-title">XUV700 2024</h5>
+              <div class="price">₹799/hr</div>
+              <div class="text-muted">₹8326 excluding fees</div>
+              <div class="mt-2 text-end">
+                <a href="xuv700.html"></a>
+                <a href="xuv700.html" class="view-details-btn">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more car cards for Glanza, Harrier, Innova, Nexon, Polo, Punch, Scorpion, Seltos, Sonet, Swift, Xuv700, Venue -->
+        <!-- Just copy and paste similar structure as above for each car -->
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
